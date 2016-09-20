@@ -1,0 +1,42 @@
+{
+  "name": "pousada-nossa-praia",
+  "version": "1.0.0",
+  "description": "development of the static website www.pousadanossapraia.com.br using webpack, handlebars, bootstrap@4",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronalstal/pousada-nossa-praia.git"
+  },
+  "keywords": [
+    "webpack",
+    "handlebars",
+    "bootstrap"
+  ],
+  "author": "Ronald Stalder @ronalstal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronalstal/pousada-nossa-praia/issues"
+  },
+  "homepage": "https://github.com/ronalstal/pousada-nossa-praia#readme",
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "lodash": "^4.15.0",
+    "moment": "^2.15.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-1": "^6.13.0",
+    "eslint": "^3.5.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-json": "^1.2.0",
+    "webpack": "^1.13.2"
+  }
+}

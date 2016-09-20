@@ -1,0 +1,15 @@
+### Project ###
+/public/
+/tmp/
+
+# the npm run ... commands can create this file but we don't want it checked in
+# /.bootstraprc
+
+### Node ###
+# Logs
+logs
+*.log
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
