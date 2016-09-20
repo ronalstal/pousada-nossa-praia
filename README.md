@@ -30,3 +30,10 @@ npm run watch
 Open [localhost:3000](http://localhost:3000/) in your browser.  
 
 Make changes in the `src` directory.
+
+
+
+linter-jsonlint
+linter-sass-lint
+
+https://github.com/jpetitcolas/html-webpack-plugin/blob/master/examples/html-loader/webpack.config.js
