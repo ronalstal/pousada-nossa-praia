@@ -1,5 +1,5 @@
 var path = require('path');
-var webpack = require('webpack');
+// var webpack = require('webpack');
 // var HandlebarsPlugin = require("handlebars-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -8,7 +8,11 @@ module.exports = {
   devtool: 'cheap-eval-source-map',
   entry: [
     'babel-polyfill',
-    './src/index.hbs',
+    './src/index.html',
+    './src/pt/index.html',
+    './src/en/index.html',
+    './src/es/index.html',
+    './src/fr/index.html',
   ],
   output: {
     publicPath: '/',
@@ -41,15 +45,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/index.html'
-    }),
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({ template: './src/pt/index.html' }),
+    new HtmlWebpackPlugin({ template: './src/es/index.html' }),
+    new HtmlWebpackPlugin({ template: './src/en/index.html' }),
+    new HtmlWebpackPlugin({ template: './src/fr/index.html' }),
     new ExtractTextPlugin('styles.css'),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      favicon: 'favicon.ico',
-      template: 'template.html'
-    }),
   ],
 };
