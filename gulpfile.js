@@ -4,7 +4,7 @@ var rename = require('gulp-rename');
 var path = require('path');
 var glob = require('glob');
 var parsePath = require('parse-filepath');
-// var lang = require('./src/assets/js/languages.json');
+var lang = require('./dev/assets/js/languages.json');
 
 var SRC_DIR = path.join(__dirname, 'src');
 var TEMPLATE_DIR = path.join(SRC_DIR, 'templates');
@@ -54,8 +54,10 @@ gulp.task('rootIndex', function () {
   );
 });
 
-var langDirs = ['A', 'B'];
+// render the hbs templates to HTML for all languages
+
 var langEntries = ['index'];
+var langDirs = lang.implemented;
 var langTasks = [];
 
 langEntries.forEach(function(langEntry) {
@@ -66,10 +68,6 @@ langEntries.forEach(function(langEntry) {
       var templateData = {
         lang: langDir,
         page: langEntry,
-        myObj: {
-          value1: "aaaaa",
-          value2: "bbbbb",
-        }
       };
       return (
         gulp.src(path.join(TEMPLATE_DIR, langEntry + '.hbs'))
