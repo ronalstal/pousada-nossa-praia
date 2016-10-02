@@ -8,6 +8,7 @@
     "rootIndex": "gulp rootIndex",
     "render": "gulp rootIndex && gulp renderLang",
     "start": "cd dev && node ../devServer.js",
+    "suisse": "cd suisse && node ../devServer.js",
     "quark": "gulp task --gulpfile myfile.js"
   },
   "repository": {

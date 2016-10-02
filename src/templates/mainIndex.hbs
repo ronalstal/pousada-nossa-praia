@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>index</title>
+  <meta charset="utf-8">
+  <title>Hotel du Suisse</title>
+  <meta name="description" content="Redirect to first valid LANGUAGE/index.html">
+  <script type="text/javascript" src="/static/js/lodash.min.js"></script>
 </head>
 
 <body>
-  <div id="app">
-    {{> title}}
-    <p class="lead">
-      This is a simple hero unit, a simple jumbotron-style component for calling
-      extra attention to featured content or information.
-    </p>
-    <p>
-      <a href="A/index.html">A</a>
-      <br>
-      <a href="B/index.html">B</a>
-    </p>
-  </div>
+  <script type="text/javascript">
+    // get implemented languages from languages.json via helper
+    var implementedLanguages = {{varImplementedLanguages PROJ_ROOT}};
+    // get accepted languages from browser
+    var browserLangs = [];
+    if (_.isArray(navigator.languages)) {
+      navigator.languages.forEach( function(l) {
+        browserLangs.push( l.substr(0,2) );  // pt-BR -> pt, etc.
+      })
+    } else {
+      if (window.navigator.language)
+        browserLangs.push (window.navigator.language.substr(0,2));
+      else if (navigator.userLanguage)
+        browserLangs.push (navigator.userLanguage.substr(0,2));
+    }
+    // valid languages: in both implemented and browser
+    var validlangs = _.intersection(implementedLanguages, browserLangs);
+    // switch to first valid language; default = first implemented language
+    var lang = validlangs.length ? validlangs[0] : implementedLanguages[0];
+    // lang = langs.available[2]; // TEST english
+    window.location.replace(lang + "/index.html");
+  </script>
 </body>
-
 </html>

@@ -1,0 +1,37 @@
+{
+  "implemented": ["pt", "es", "en", "fr"],
+  "lang": {
+    "pt": {
+      "title": {
+        "pt": "português",
+        "es": "portugués",
+        "fr": "portugais",
+        "en": "Portuguese"
+      }
+    },
+    "es": {
+      "title": {
+        "pt": "espanhol",
+        "es": "español",
+        "fr": "espagnol",
+        "en": "Spanish"
+      }
+    },
+    "en": {
+      "title": {
+        "pt": "inglês",
+        "es": "inglés",
+        "fr": "anglais",
+        "en": "English"
+      }
+    },
+    "fr": {
+      "title": {
+        "pt": "francês",
+        "es": "francés",
+        "fr": "Français",
+        "en": "French"
+      }
+    }
+  }
+}
