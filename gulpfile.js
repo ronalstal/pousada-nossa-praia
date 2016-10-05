@@ -4,16 +4,19 @@ var rename = require('gulp-rename');
 var path = require('path');
 var glob = require('glob');
 var parsePath = require('parse-filepath');
-var languages = require('./src/assets/js/languages.json');
 var _ = require('lodash');
 
 var PROJ_ROOT = path.join(__dirname);
 var SRC_DIR = path.join(PROJ_ROOT, 'src');
+var JS_DIR = path.join(SRC_DIR, 'js');
 var TEMPLATE_DIR = path.join(SRC_DIR, 'templates');
 var PARTIAL_DIR = path.join(TEMPLATE_DIR, 'partials');
 var HELPER_DIR = path.join(TEMPLATE_DIR, 'helpers');
+var I18N_DIR = require(path.join(TEMPLATE_DIR, 'i18n'));
 var DEST_DIR = path.join(PROJ_ROOT, 'dev');
 var LOG_LEVEL = handlebars.Handlebars.logger.DEBUG;
+
+var languages = require(path.join(JS_DIR, 'languages.json'));
 
 var templateOptions = {
   ignorePartials: false,
@@ -73,7 +76,7 @@ var langDirs = languages.implemented;
 var langTasks = [];
 
 hbsEntries.forEach(function(hbsEntry) {
-  var i18n = require('./src/templates/i18n/'+hbsEntry+'.json');
+  var i18n = require(path.join(I18N_DIR, hbsEntry+'.json'));
   langDirs.forEach(function(lang) {
     var taskName = lang + hbsEntry;
     langTasks.push(taskName);

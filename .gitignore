@@ -2,6 +2,7 @@
 /dev/
 /public/
 /tmp/
+/src/js/private.json
 
 # the npm run ... commands can create this file but we don't want it checked in
 # /.bootstraprc

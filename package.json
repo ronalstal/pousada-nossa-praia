@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "rootIndex": "gulp rootIndex",
     "render": "gulp rootIndex && gulp renderLang",
+    "style": "gulp style --gulpfile gulpfiles/bootstrap.gulpfile.babel.js",
     "start": "cd dev && node ../devServer.js",
     "suisse": "cd suisse && node ../devServer.js",
     "quark": "gulp task --gulpfile myfile.js"
@@ -27,15 +28,16 @@
   },
   "homepage": "https://github.com/ronalstal/pousada-nossa-praia#readme",
   "dependencies": {
-    "jquery": "^3.1.0",
-    "lodash": "^4.15.0",
-    "moment": "^2.15.0"
+    "jquery": "^3.1.1",
+    "lodash": "^4.16.2",
+    "moment": "^2.15.1"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-1": "^6.13.0",
+    "bootstrap": "^4.0.0-alpha.4",
     "eslint": "^3.5.0",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-import": "^1.15.0",
