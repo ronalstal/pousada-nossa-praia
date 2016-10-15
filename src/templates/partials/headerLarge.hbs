@@ -1,0 +1,19 @@
+<!-- header with background picture -->
+<div class="main-header">
+  <span class="title">{{{t.bem-vindo}}}</span>
+
+  <div id="flags" style="position:absolute;top:0;right:5px;z-index: 2;">
+    {{navFlags lang PROJ_ROOT}}
+  </div>
+
+  <div id="navbar" class="w3-btn-group w3-right">
+    <a name="home" class=""
+       href="javascript:showContent('home');">{{{t.navHome}}}</a>
+    <a name="contact" class=""
+       href="javascript:showContent('contact');">{{{t.navContact}}}</a>
+    <a name="about" class=""
+       href="javascript:showContent('about');">{{{t.navAbout}}}</a>
+  </div>
+
+  <div id="logo"></div>
+</div>

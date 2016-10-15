@@ -3,35 +3,41 @@
   "lang": {
     "pt": {
       "title": {
-        "pt": "português",
-        "es": "portugués",
-        "fr": "portugais",
+        "pt": "Português",
+        "es": "Portugués",
+        "fr": "Portugais",
         "en": "Portuguese"
       }
     },
     "es": {
       "title": {
-        "pt": "espanhol",
-        "es": "español",
-        "fr": "espagnol",
+        "pt": "Espanhol",
+        "es": "Español",
+        "fr": "Espagnol",
         "en": "Spanish"
       }
     },
     "en": {
       "title": {
-        "pt": "inglês",
-        "es": "inglés",
-        "fr": "anglais",
+        "pt": "Inglês",
+        "es": "Inglés",
+        "fr": "Anglais",
         "en": "English"
       }
     },
     "fr": {
       "title": {
-        "pt": "francês",
-        "es": "francés",
+        "pt": "Francês",
+        "es": "Francés",
         "fr": "Français",
         "en": "French"
       }
     }
-  }
+  },
+  "actual": {
+    "pt": "atual",
+    "es": "actual",
+    "fr": "courante",
+    "en": "current"
+    }
 }

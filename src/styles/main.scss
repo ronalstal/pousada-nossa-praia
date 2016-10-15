@@ -1,0 +1,14 @@
+//  import everything to build main.css
+//     by "npm run style"
+
+// override default Bootstrap variables (before setting their defaults)
+@import "beforeBootstrapVars.scss";
+// Boostrap variables and selected modules
+@import "bootstrapModules.scss";
+// override Bootstrap variables (after setting their defaults)
+@import "afterBootstrapVars.scss";
+
+// import project scss files
+@import "general.scss";
+@import "header.scss";
+@import "footer.scss";

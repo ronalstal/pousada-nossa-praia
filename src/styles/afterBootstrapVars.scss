@@ -1,0 +1,11 @@
+// override default Bootstrap variables (after setting their defaults)
+
+// $body-bg:    #8888dd;
+
+@font-face {
+    font-family: titleFont;
+    src: url(../fonts/Damion-Regular.ttf);
+}
+
+$menubar-bg-color:      darken($brand-primary, 20%);
+$menubar-text-color:    $gray-lightest;

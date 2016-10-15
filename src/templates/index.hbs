@@ -3,19 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- <meta http-equiv="x-ua-compatible" content="ie=edge"> -->
   <title>Pousada Nossa Praia</title>
   <meta name="description" content="Pousada Nossa Praia">
   <meta lang="{{lang}}">
-  <script type="text/javascript" src="/static/js/lodash.min.js"></script>
-  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/static/stylesheets/w3.css">
-  <link rel="stylesheet" href="/static/stylesheets/font-awesome-4.6.3.min.css">
-  <link rel="stylesheet" href="/static/stylesheets/suisse.css">
+  <!-- <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff"> -->
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+  <script type="text/javascript" src="/assets/js/lodash.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.quickfit.js"></script>
+  <script type="text/javascript" src="/assets/js/tether.min.js"></script>
+  <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <link rel="stylesheet" href="/assets/styles/tether.min.css">
 </head>
 
-<body style="text-align:center;width:100%;background-color: red">
-  <div id="header"></div>
+<body>
+  <!-- different headers for <= small and >= medium devices  -->
+  <div id="header" class="header hidden-md-up">{{> headerSmall}}</div>
+  <div id="header" class="header hidden-sm-down">{{> headerLarge}}</div>
+
   <div id="content">
     <!-- use <div> instead of <section> for compability -->
     <!-- lazy loading of sections by showContent(id) when needed -->
@@ -24,16 +47,14 @@
     <div id="about" class="section section-empty"></div>
     <!-- <i class="fa fa-spinner fa-spin content-spinner"></i> -->
   </div>
-  <div id="footer"></div>
-  <div id="logo"></div>
+  <div id="footer" class="footer menubar"></div>
+
 
   <script>
   $(document).ready(function() {
-    $("#header").load("/{{lang}}/header.html", function() {
       $("#footer").load("/{{lang}}/footer.html", function() {
-        // showContent("contact");  // loads and displays home section
+        // showContent("home");  // loads and displays home section
       })
-    })
   })
 
   var showContent = function(section) {
@@ -42,7 +63,7 @@
     $("#content" + " .section-empty").each(function() {
       $("#content i").remove();
       console.log("LOAD #" + section);
-      $("#" + section).load("/pt/"+section+".html", function(responseTxt, statusTxt, xhr) {
+      $("#" + section).load("/{{lang}}/"+section+".html", function(responseTxt, statusTxt, xhr) {
         console.log("CB " + statusTxt );
         // $("#content i").css({display:"none"});
         if (statusTxt === "success") $("#" + section).removeClass("section-empty");

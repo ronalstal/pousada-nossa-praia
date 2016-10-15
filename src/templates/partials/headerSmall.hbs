@@ -1,0 +1,18 @@
+<!-- sticky top menu-bar on -sm- devices or smaller -->
+<div class="header-menubar">
+  <div>
+    <span class="menubar-menu-toggler">&#9776;</span>
+    <span id="#menubarTitle" class="menubar-title">{{{t.bem-vindo}}}</span>
+  </div>
+
+  <!-- background-image here, because attr(lang) doesn't work in url() -->
+  <div class="flags-dropdown" lang="{{lang}}"
+      style="background-image:url(/assets/img/flags32/{{lang}}.png)">
+      &#9660;
+  </div>
+</div>
+
+<!-- background picture logomarca -->
+<div class="header-logo">
+  <img src="/assets/img/logomarca.300x185.png" alt="" />
+</div>

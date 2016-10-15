@@ -1,0 +1,135 @@
+
+.header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+
+  // permanent top menu-bar (hidden on -md- devices or larger)
+  &> .header-menubar {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    background-color: $menubar-bg-color;
+    color: $menubar-text-color;
+    padding-left: 5px;
+
+    &> * {
+      vertical-align: middle;
+      line-height: normal;
+    }
+    &> div:first-child {
+      display: inline-block;
+      width: calc(100% - 60px);
+      background-color: transparent;
+      font-family: titleFont;
+      color: yellow;
+
+      &> span {
+        cursor: pointer;
+      }
+
+      &> .menubar-title {
+        font-size: 1.3em;
+      }
+
+      & .menubar-menu-toggler {
+        padding-right: 5px;
+        font-size: 1.2em;
+        color: $menubar-text-color;
+      }
+    }
+    &> .flags-dropdown {
+      display: inline-block;
+      font-size: 0.8em;
+      // float: right;
+      height: 32px;
+      line-height: 32px;
+      padding-left: 34px;
+      // DOES NOT WORK:
+      // background-image: url("../img/flags32/" attr(lang) ".png");
+      // ==> background-image set in style="" in headerSmall.hbs
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+
+      & > * {
+        vertical-align: middle;
+        line-height: normal;
+      }
+    }
+  }  // end of header-menubar
+
+  // picture logomarca
+  &> .header-logo {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    &> img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // header with background picture
+  .main-header {
+    display: table;
+    width: 100%;
+    height: 170px;
+    background-image: url("../img/header.png");
+    background-color: red;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+
+    &> .title {
+      display: table-cell;
+      vertical-align: middle;
+      font-family: titleFont;
+      font-weight: normal;
+      font-size: 4em;
+      color: yellow;
+      text-shadow: 2px 3px 0px rgb(0,0,100);
+      z-index: 1;
+      @include media-breakpoint-up(lg) {
+        font-size: 6em;
+      }
+    }
+
+  }
+}
+
+#navbar {
+  position: absolute;
+  bottom: 5px; right: 5px;
+}
+
+#navbar a {
+  min-width: 100px;
+  border:3px solid !important;
+}
+
+#navbar a:hover {
+  border-color: yellow !important;
+}
+
+#navbar a.active {
+  background-color: indigo !important;
+}
+
+#logo {
+  position: absolute;
+  top: 30px; left: 30px;
+  width: 150px; height: 93px;
+  background-image: url("../img/logomarca.150x93.png");
+  background-color: red;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -ms-transform: rotate(-15deg); /* IE 9 */
+  -webkit-transform: rotate(-15deg); /* Safari */
+  transform: rotate(-15deg); /* Standard syntax */
+}

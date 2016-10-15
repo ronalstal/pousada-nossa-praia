@@ -1,0 +1,41 @@
+// override default Bootstrap variables (before setting their defaults)
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-flex:               false;
+$enable-rounded:            true;
+$enable-shadows:            true;
+$enable-gradients:          true;
+$enable-transitions:        true;
+$enable-hover-media-query:  true;
+$enable-grid-classes:       true;
+$enable-print-styles:       true;
+
+$body-bg:    #8888dd;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 360px,  // 544
+  md: 480px,  // 768
+  lg: 600px,  // 992
+  xl: 900px   // 1200 
+);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+);

@@ -55,7 +55,7 @@ contain the minified output from the "dev/" directory with the respective key fo
 #### The "suisse/" directory
 
 contains a static page for the site of the former [Hotel du Suisse](http://www.hoteldusuisse.com.br), now replaced by Pousada Nossa Praia.
-Will be manually maintained and deployed to *www.hoteldusuisse.com.br* . 
+Will be manually maintained and deployed to *www.hoteldusuisse.com.br* .
 
 ## Usage
 
@@ -71,7 +71,19 @@ Make changes in the `src` directory.
 
 
 
-linter-jsonlint
-linter-sass-lint
+## References
+
 
 https://github.com/jpetitcolas/html-webpack-plugin/blob/master/examples/html-loader/webpack.config.js
+
+https://css-tricks.com/gulp-for-beginners/  https://github.com/zellwk/gulp-starter-csstricks
+http://smoothtouchscroll.com/
+http://stackoverflow.com/questions/14431411/pure-css-to-make-font-size-responsive-based-on-dynamic-amount-of-characters/21981859#21981859
+
+http://v4-alpha.getbootstrap.com/components/navbar/#brand
+
+http://stackoverflow.com/questions/18626788/enable-google-analytics-for-single-page-site-with-views
+https://github.com/googleanalytics/autotrack/blob/master/docs/common-options.md
+
+https://github.com/cowboy/jquery-throttle-debounce
+http://drupalmotion.com/article/debounce-and-throttle-visual-explanation
