@@ -1,0 +1,93 @@
+
+// header with background picture
+.headerLarge {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $headerLarge-height;
+  background-image: url("../img/header.png");
+  background-color: red;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  & .logomarca {
+    position: absolute;
+    top: 30px; left: 30px;
+    width: 150px; height: 93px;
+    background-image: url("../img/logomarca.150x93.png");
+    background-color: red;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -ms-transform: rotate(-15deg); /* IE 9 */
+    -webkit-transform: rotate(-15deg); /* Safari */
+    transform: rotate(-15deg); /* Standard syntax */
+  }
+
+  &> .flag-box {
+    position:absolute;
+    top:0;
+    right:5px;
+  }
+
+  &> .title-box {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 100px;
+    height: $headerLarge-height;
+    line-height: $headerLarge-height;
+    vertical-align: middle;
+
+    &> span {
+      line-height: normal;
+      font-family: titleFont;
+      font-weight: normal;
+      font-size: 4em;
+      color: yellow;
+      text-shadow: 2px 3px 0px rgb(0,0,100);
+      @include media-breakpoint-up(lg) {
+        font-size: 5em;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 6em;
+      }
+    }
+  }
+  // area for navigation buttons
+  &> .navLarge-area {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.6);
+
+    &> .navLarge-bar {
+      &> .navLarge-item {
+        float: left;
+        min-width: 50px;
+        padding: 0 0.5em;
+        margin: 0 0.1em;
+        border:3px solid;
+        &:hover {
+          border-color: yellow;
+          background-color: rgba(0,0,0,0.8);
+        }
+        &.active {
+          background-color: indigo;
+        }
+
+        &> .navLarge-link {
+          color: white;
+        }
+      }
+    }
+  }
+
+}

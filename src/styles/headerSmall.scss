@@ -1,0 +1,78 @@
+.header-menubar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  background-color: $menubar-bg-color;
+  color: $menubar-text-color;
+  padding-left: 5px;
+
+  &> * {
+    vertical-align: middle;
+    line-height: normal;
+  }
+
+  &> .menu-dropdown,
+  &> .flags-dropdown {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    & a:not(:first-child) {
+      margin-top: 0.7em;
+    }
+
+    & > * {
+      vertical-align: middle;
+      line-height: normal;
+    }
+
+    & .menubar-menu-toggler {
+      font-size: 1.2em;
+      color: $menubar-text-color;
+      padding-right: 5px;
+    }
+
+    // overwrite some BS stuff
+    & > button {
+      padding:0;
+      border:none;
+      background-color:transparent;
+      color: $menubar-text-color;
+      font-size: inherit;
+    }
+    & .dropdown-toggle::after {
+      display: none;
+    }
+  }
+
+  &> .menu-dropdown {
+    width: calc(100% - 52px);
+    font-size: 1.3em;
+    & .menubar-title {
+      font-family: titleFont;
+      color: $menubar-title-color;
+    }
+    & .menubar-menu-toggler {
+      padding-left: 5px;
+    }
+  }
+
+  &> .flags-dropdown {
+    font-size: 0.8em;
+  }
+}  // end of header-menubar
+
+.header-logo {
+  display: block;
+  margin-top: 35px;
+  width: 100%;
+  height: auto;
+
+  &> img {
+    width: 100%;
+    height: auto;
+  }
+}  // end of header-logo

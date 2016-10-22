@@ -1,6 +1,14 @@
 {
-  "welcome": {
-    "pt": "bem-vindo!",
-    "en": "welcome!"
+  "beiraMar": {
+    "pt": "à beira-mar, <br class=\"hidden-md-up\" />na orla de Ponta-Negra,",
+    "en": "by the sea at the beach of Ponta Negra,",
+    "es": "junto al mar, a la playa de Ponta-Negra,",
+    "fr": "au bord de la mer, à la plage de Ponta-Negra,"
+  },
+  "emNatal": {
+    "pt": "em Natal / RN, Brasil",
+    "en": "em Natal / RN, Brazil",
+    "es": "en Natal / RN, Brasil",
+    "fr": "à Natal / RN, Brésil"
   }
 }

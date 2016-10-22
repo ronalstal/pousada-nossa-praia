@@ -5,6 +5,8 @@ import path from 'path';
 import glob from 'glob';
 import parsePath from 'parse-filepath';
 import _ from 'lodash';
+import parseArgs from 'minimist';
+import parseArgsOptions from 'minimist-options';
 
 const PROJ_ROOT = path.join(__dirname, '..');
 const SRC_DIR = path.join(PROJ_ROOT, 'src');
@@ -18,6 +20,7 @@ const LOG_LEVEL = handlebars.Handlebars.logger.DEBUG;
 
 const languages = require(path.join(JS_DIR, 'languages.json'));
 const priv = require(path.join(JS_DIR, 'private.js'));
+const targetSite = "http://localhost:3000";
 
 const templateOptions = {
   ignorePartials: false,
@@ -48,11 +51,20 @@ const templateOptions = {
   }
 };
 
+let argv = parseArgs(process.argv, opts=parseArgsOptions({
+  targetSite: {
+    type: 'string',
+    aliases: 't',
+    default: 'dev'
+  }
+}));
+
 gulp.task('rootIndex', function () {
 
   const templateData = {
     PROJ_ROOT, // __dirname in helpers points to HELPER_DIR
     gaId: priv.gaId,
+    targetSite: argv.targetSite,
     languages,
   };
   // console.log(templateData);
@@ -89,6 +101,7 @@ hbsEntries.forEach(function(hbsEntry) {
         PROJ_ROOT, // __dirname in helpers points to HELPER_DIR
         gaId: priv.gaId,
         lang,
+        targetSite: argv.targetSite,
         implemented: langDirs,
         page: hbsEntry,
         t: _.mapValues(i18n, lang) // extract texts for actual language

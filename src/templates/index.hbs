@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{lang}}">
 <head>
   <meta charset="utf-8">
+  <link rel="alternate" href="http://{{targetSite}}" hreflang="x-default" />
+  <link rel="alternate" href="{{targetSite}}/pt" hreflang="pt" />
+  <link rel="alternate" href="{{targetSite}}/es" hreflang="es" />
+  <link rel="alternate" href="{{targetSite}}/en" hreflang="en" />
+  <link rel="alternate" href="{{targetSite}}/fr" hreflang="fr" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- <meta http-equiv="x-ua-compatible" content="ie=edge"> -->
   <title>Pousada Nossa Praia</title>
@@ -27,7 +32,6 @@
   <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
   <script type="text/javascript" src="/assets/js/lodash.min.js"></script>
   <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/assets/js/jquery.quickfit.js"></script>
   <script type="text/javascript" src="/assets/js/tether.min.js"></script>
   <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
   <link rel="stylesheet" href="/assets/styles/main.css">
@@ -36,8 +40,8 @@
 
 <body>
   <!-- different headers for <= small and >= medium devices  -->
-  <div id="header" class="header hidden-md-up">{{> headerSmall}}</div>
-  <div id="header" class="header hidden-sm-down">{{> headerLarge}}</div>
+  {{> headerSmall}}
+  {{> headerLarge}}
 
   <div id="content">
     <!-- use <div> instead of <section> for compability -->
@@ -46,41 +50,44 @@
     <div id="contact" class="section section-empty"></div>
     <div id="about" class="section section-empty"></div>
     <!-- <i class="fa fa-spinner fa-spin content-spinner"></i> -->
+
   </div>
-  <div id="footer" class="footer menubar"></div>
+  <div id="footer" class="footer"></div>
 
 
-  <script>
+  <script charset="utf-8">
   $(document).ready(function() {
-      $("#footer").load("/{{lang}}/footer.html", function() {
-        // showContent("home");  // loads and displays home section
-      })
+    $("#footer").load("/{{lang}}/footer.html", function() {});
+    showContent("home");
   })
 
   var showContent = function(section) {
+    var sectionElement = $("#" + section);
     // need to load the section ?
-    console.log("#" + section + " .section-empty");
-    $("#content" + " .section-empty").each(function() {
-      $("#content i").remove();
-      console.log("LOAD #" + section);
-      $("#" + section).load("/{{lang}}/"+section+".html", function(responseTxt, statusTxt, xhr) {
-        console.log("CB " + statusTxt );
-        // $("#content i").css({display:"none"});
-        if (statusTxt === "success") $("#" + section).removeClass("section-empty");
-        // $("#content .section:visible").hide();  // hide actual visible section
-        // $("#" + section).css({display:"block"}); // show this
+    if (sectionElement.hasClass("section-empty")) {
+      console.log("LOADING section "+section);
+      sectionElement.load("/{{lang}}/"+section+".html", function(response, status, xhr) {
+        if (status === "error") {
+          console.log("ERROR loading section "+section+": "+xhr.status+" "+xhr.statusText);
+          return false;
+        }
+        sectionElement.removeClass("section-empty");
+        console.log("LOADED section "+section);
+        showContent(section);
+        return true;
       })
-      return false;  // .each for only one element
-    })
-    // section has been loaded
-    $("#content .section:visible").hide();  // hide actual visible section
-    $("#" + section).css({display:"block"}); // show this
+    } else {
+      // section has been loaded
+      console.log("SHOWING section "+section);
+      $("#content .section:visible").hide();  // hide actual visible section
+      sectionElement.css({display:"block"}); // show this
 
-    // mark as active in header navbar
-    $("#navbar a").removeClass("active");  // clear previous
-    $("#navbar a[name="+section+"]").addClass("active");
+      // mark as active in header navbar
+      $("#navbar a").removeClass("active");  // clear previous
+      $("#navbar a[name="+section+"]").addClass("active");
 
-    // TODO set last update date in footer
+      // TODO set last update date in footer
+    }
   }
   </script>
 </body>

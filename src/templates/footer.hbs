@@ -1,1 +1,51 @@
-<span>futter</span>
+
+<!-- button at right to stop/restart animation -->
+
+<div class="stop-start-wrapper">
+  x
+</div>
+
+<!-- aera at left for marquee(s) -->
+
+<div class="marquee-area">
+
+  <!-- grid with one row and two columns for the marquee
+  the 2nd column will be visible only on >= -xl- devices
+  (stacked and hidden on <= -lg-) -->
+
+  <!-- for now: only one column on all devices-->
+
+  <div class="marquee-container container">
+    <div class="marquee-row row">
+      <div class="marquee-col col-xs-12">
+        <span id="marquee-1" class="marquee">first text</span>
+      </div>
+    </div>   <!-- end of marquee row -->
+  </div>   <!-- end of marquee container -->
+</div>   <!-- end of marquee-area -->
+
+<script charset="utf-8">
+
+// function to show next text
+var actualText = 1;  // [0] already on screen
+function nextText() {
+  $("#marquee-1").html(texts[actualText]);
+  actualText++;
+  if (actualText >= texts.length) actualText = 0;
+}
+  // build array of texts to show
+  var texts = [];
+  var text = "{{t.phone}}";
+  texts.push(text);
+  $("#marquee-1").html(text); // show first before animation starts
+  texts.push("{{t.lastUpdated}}");
+  texts.push("copyright &copy; 2016 Pousada Nossa Praia");
+  texts.push("designed by Ronald Stalder");
+
+  // set animation interval
+  var marqueeInterval = setInterval(nextText, 1500);
+
+  // stop/start animation (from button)
+  function stopMarquee() { clearInterval(marqueeInterval); }
+  function startMarquee() { marqueeInterval = setInterval(nextText, 1000); }
+</script>

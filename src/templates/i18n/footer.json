@@ -1,2 +1,14 @@
 {
+  "phone": {
+    "pt": "telefone: +55 (84) 3219-3898",
+    "en": "phone: +55 (84) 3219-3898",
+    "es": "teléfono: +55 (84) 3219-3898",
+    "fr": "téléphone: +55 (84) 3219-3898"
+  },
+  "lastUpdated": {
+    "pt": "última atualização em ",
+    "en": "last updated on ",
+    "es": "última actualización en ",
+    "fr": "dernière mise à jour le "
+  }
 }
