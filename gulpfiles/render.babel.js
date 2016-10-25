@@ -18,7 +18,7 @@ const I18N_DIR = path.join(TEMPLATE_DIR, 'i18n');
 const DEST_DIR = path.join(PROJ_ROOT, 'dev');
 const LOG_LEVEL = handlebars.Handlebars.logger.DEBUG;
 
-const languages = require(path.join(JS_DIR, 'languages.json'));
+const languages = require(path.join(I18N_DIR, 'header.json'));
 const priv = require(path.join(JS_DIR, 'private.js'));
 const targetSite = "http://localhost:3000";
 
@@ -47,11 +47,12 @@ const templateOptions = {
   compile: {
     data: {
       level: LOG_LEVEL,
+      targetSite,
     }
   }
 };
 
-let argv = parseArgs(process.argv, opts=parseArgsOptions({
+let argv = parseArgs(process.argv, parseArgsOptions({
   targetSite: {
     type: 'string',
     aliases: 't',

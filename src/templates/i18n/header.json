@@ -35,12 +35,18 @@
     }
   },
 
-  "sections": ["home", "about"],
+  "sections": ["home", "contact", "about"],
   "home": {
     "pt": "início",
     "es": "inicio",
     "fr": "début",
     "en": "home"
+  },
+  "contact": {
+    "pt": "contato",
+    "es": "contato",
+    "fr": "contact",
+    "en": "contact"
   },
   "about": {
     "pt": "sobre",

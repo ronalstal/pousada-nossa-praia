@@ -1,0 +1,55 @@
+
+// layout
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  @include media-breakpoint-down(sm) {
+    background-color: $menubar-bg-color;
+    height: $headerSmall-height;
+  }
+  @include media-breakpoint-up(md) {
+    height: $headerLarge-height;
+    background-image: url("../img/header.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.content {
+  position: fixed;
+  bottom: $footer-height;
+  left: 0;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include media-breakpoint-down(sm) {
+    top: $headerSmall-height;
+  }
+  @include media-breakpoint-up(md) {
+    top: $headerLarge-height;
+  }
+  &> .dropdown-menu {
+    position: fixed;
+    top: $headerSmall-height - 2;
+    border-radius: 8px;
+  }
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width:100%;
+  height: $footer-height;
+  line-height: $footer-height;
+  text-align: center;
+  vertical-align: middle;
+  background-color: $menubar-bg-color;
+  color: $menubar-text-color;
+  overflow: hidden;
+}

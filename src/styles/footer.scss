@@ -1,41 +1,32 @@
 
-// fixed box at the bottom
-.footer {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  width:100%;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  vertical-align: middle;
-  background-color: $menubar-bg-color;
-  color: $menubar-text-color;
-}
+// fixed box at the bottom defined in index.scss
 
-// button at right to stop/restart animation
-.stop-start-wrapper {
+.footer {
+
+  // button at right to stop/restart animation
+  & .stop-start-wrapper {
     width: 30px;
     height: 30px;
     line-height: 30px;
     vertical-align: middle;
     float: right;
     background-color: black;
-}
-
-// area for marquee(s) at left
-.marquee-area {
-  width: calc(100% - 32px);
-  height: 30px;
-  line-height: 30px;
-  vertical-align: middle;
-  float: left;
-  background-color: transparent;
-  overflow: hidden; // hide 2nd marque on smaller devices
-  @include media-breakpoint-down(md) {
-    font-size: 12pt;
   }
-  @include media-breakpoint-down(sm) {
-    font-size: 10pt;
+  
+  // area for marquee(s) at left
+  & .marquee-area {
+    width: calc(100% - 32px);
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    float: left;
+    background-color: transparent;
+    overflow: hidden; // hide 2nd marque on smaller devices
+    @include media-breakpoint-down(md) {
+      font-size: 12pt;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 10pt;
+    }
   }
 }

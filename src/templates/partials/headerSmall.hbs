@@ -1,31 +1,22 @@
 <!-- sticky top menu-bar on -sm- devices or smaller -->
-<div class="header-menubar hidden-md-up">
+<div class="headerSmall hidden-md-up">
 
-  <div class="dropdown menu-dropdown">
+  <div id="btn-menu-dropdown" class="dropdown menu-dropdown">
     <button class="btn dropdown-toggle" type="button"
-            id="dropdownMenu1" data-toggle="dropdown"
+            data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
       <span class="menubar-menu-toggler">&#9776;</span>
-      <span id="menubarTitle" class="menubar-title">{{{t.bem-vindo}}}</span>
+      <span id="menubarTitle" class="menubar-title">Pousada Nossa Praia</span>
     </button>
-    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenu1">
-      {{navSections lang PROJ_ROOT true}}
-    </div>
+
   </div>
 
-  <div class="dropdown flags-dropdown">
+  <div id="btn-flags-dropdown" class="dropdown flags-dropdown">
     <button class="btn dropdown-toggle" type="button"
-            id="dropdownMenu2" data-toggle="dropdown"
+            data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
       <img src="/assets/img/flags32/{{lang}}.png" alt="" />&#9660;
     </button>
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-      {{navFlags lang PROJ_ROOT true}}
-    </div>
-  </div>
-</div>
 
-<!-- background picture logomarca (before content)-->
-<div class="header-logo  hidden-md-up">
-  <img src="/assets/img/logomarca.300x185.png" alt="" />
+  </div>
 </div>

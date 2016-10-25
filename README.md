@@ -87,3 +87,14 @@ https://github.com/googleanalytics/autotrack/blob/master/docs/common-options.md
 
 https://github.com/cowboy/jquery-throttle-debounce
 http://drupalmotion.com/article/debounce-and-throttle-visual-explanation
+
+
+```bash
+git checkout --orphan gh-pages
+rm -rf * .gitignore
+echo "My Page Pousada" > index.html
+git add -A . && git status
+git commit -m "first commit on gh-pages"
+git push origin gh-pages
+git checkout master
+```

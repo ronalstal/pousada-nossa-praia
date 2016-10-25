@@ -1,0 +1,32 @@
+{
+  "frmNameLbl": {
+    "pt": "Nome",
+    "en": "Name",
+    "es": "Nombre",
+    "fr": "Nom"
+  },
+  "frmNamePlc": {
+    "pt": "você",
+    "en": "you",
+    "es": "usted",
+    "fr": "vous"
+  },
+  "frmEmailLbl": {
+    "pt": "E-Mail",
+    "en": "Email",
+    "es": "Email",
+    "fr": "E-Mail"
+  },
+  "frmEmailPlc": {
+    "pt": "você@exemplo.com",
+    "en": "you@example.com",
+    "es": "usted@ejemplo.com",
+    "fr": "vous@exemple.com"
+  },
+  "frmSubmit": {
+    "pt": "enviar",
+    "en": "submit",
+    "es": "enviar",
+    "fr": "envoyer"
+  }
+}

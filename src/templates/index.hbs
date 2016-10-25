@@ -40,18 +40,28 @@
 
 <body>
   <!-- different headers for <= small and >= medium devices  -->
-  {{> headerSmall}}
-  {{> headerLarge}}
+  <div id="header" class="header">
+    {{> headerSmall}}
+    {{> headerLarge}}
+  </div>
 
-  <div id="content">
+  <div id="content" class="content">
+    <div class="dropdown-menu dropdown-menu-left"
+        id="menu-dropdown" aria-labelledby="btn-menu-dropdown">
+      {{navSections lang PROJ_ROOT true}}
+    </div>
+    <div class="dropdown-menu dropdown-menu-right"
+         id="flags-dropdown" aria-labelledby="btn-flags-dropdown">
+      {{navFlags lang PROJ_ROOT true}}
+    </div>
     <!-- use <div> instead of <section> for compability -->
     <!-- lazy loading of sections by showContent(id) when needed -->
     <div id="home" class="section section-empty"></div>
     <div id="contact" class="section section-empty"></div>
     <div id="about" class="section section-empty"></div>
     <!-- <i class="fa fa-spinner fa-spin content-spinner"></i> -->
-
   </div>
+
   <div id="footer" class="footer"></div>
 
 
@@ -89,6 +99,21 @@
       // TODO set last update date in footer
     }
   }
+
+  // toggle menus from headerSmall (appear in #content)
+  $("#btn-menu-dropdown").on('show.bs.dropdown', function () {
+    $("#menu-dropdown").show(300);
+  });
+  $("#btn-menu-dropdown").on('hide.bs.dropdown', function () {
+    $("#menu-dropdown").hide(300);
+  });
+  $("#btn-flags-dropdown").on('show.bs.dropdown', function () {
+    $("#flags-dropdown").show(300);
+  });
+  $("#btn-flags-dropdown").on('hide.bs.dropdown', function () {
+    $("#flags-dropdown").hide(300);
+  });
+
   </script>
 </body>
 </html>

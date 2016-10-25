@@ -13,7 +13,7 @@
   background-size: cover;
   text-align: center;
 
-  & .logomarca {
+  &> .logomarca {
     position: absolute;
     top: 30px; left: 30px;
     width: 150px; height: 93px;
